@@ -16,4 +16,5 @@ public class Chapter1 {
                 .sum();
         return sumOfEnd;
     }
+
 }
