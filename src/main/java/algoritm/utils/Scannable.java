@@ -1,4 +1,4 @@
-package lv465.algoritm.utils;
+package algoritm.utils;
 
 import java.util.InputMismatchException;
 

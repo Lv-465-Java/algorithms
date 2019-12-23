@@ -1,7 +1,7 @@
-package lv465.algoritm.utils;
+package algoritm.utils;
 
-import lv465.algoritm.chapter.Chapter1;
-import lv465.algoritm.chapter.Chapter2;
+import algoritm.chapters.Chapter1;
+import algoritm.chapters.Chapter2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

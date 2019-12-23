@@ -1,4 +1,4 @@
-package lv465.algoritm.utils;
+package algoritm.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

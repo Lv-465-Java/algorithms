@@ -1,6 +1,4 @@
-package lv465;
-
-        import lv465.algoritm.utils.ChapterInvoker;
+import algoritm.utils.ChapterInvoker;
 
 public class Main {
     public static void main(String[] args) {

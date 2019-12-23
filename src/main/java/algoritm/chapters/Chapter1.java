@@ -1,4 +1,4 @@
-package lv465.algoritm.chapter;
+package algoritm.chapters;
 
 import java.util.Objects;
 import java.util.stream.Stream;
