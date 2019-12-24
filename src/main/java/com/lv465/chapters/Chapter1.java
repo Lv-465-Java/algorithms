@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Chapter1 {
     /**
-     * Method calculates sum sum of last m digits of number n.
+     * Method calculates sum sum of last m digits of natural number n.
      *
      * @param n input number
      * @param m number of last digits of n
