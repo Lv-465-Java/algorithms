@@ -22,15 +22,4 @@ public class Chapter1 {
         return k;
     }
 
-    public static List<NumberWrapper> getNaturalNumberSequenceA(int n){
-        List<NumberWrapper> result = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (n == Math.round(Math.pow(i,2) + Math.pow(j, 2))){
-                    result.add(new NumberWrapper(n, i, j));
-                }
-            }
-        }
-        return result;
-    }
 }
