@@ -3,7 +3,6 @@ package com.lv465.util;
 
 import com.lv465.chapter.Chapter1;
 import com.lv465.chapter.Chapter2;
-import org.graalvm.compiler.lir.alloc.lsra.LinearScan_OptionDescriptors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,6 +44,9 @@ public class ChapterInvoker {
         menu.put("6", "  6 - number Of Digits3");
         menu.put("7", "  7 - sum Of Digits in number");
         menu.put("8", "  8 - perfect Numbers");
+        menu.put("9", "  9 - sum of last digits");
+        menu.put("10", "  10 - all common multiple for two numbers");
+        menu.put("11", "  11 - mertens numbers");
         menu.put("Q", "  Q - exit");
 
         methodsMenu = new LinkedHashMap<>();
@@ -56,6 +58,9 @@ public class ChapterInvoker {
         methodsMenu.put("6", this::numberOfDigits3);
         methodsMenu.put("7", this::getSumOfDigits);
         methodsMenu.put("8", this::getPerfectNumbers);
+        methodsMenu.put("9", this::logSumOfLastDigits);
+        methodsMenu.put("10", this::logAllCommonMultipleNumbers);
+        methodsMenu.put("11", this::logMertensNumbers);
     }
 
     /**
