@@ -9,6 +9,7 @@ public class Chapter1 {
     /**
      * This method convert given number to string
      * and get number of digits.
+     *
      * @param number value which input user.
      * @return integer value length of string.
      * @author Andrii Bren
@@ -19,6 +20,7 @@ public class Chapter1 {
 
     /**
      * This method get number of digits in a given number.
+     *
      * @param number value which input user.
      * @return integer value count
      * @author Andrii Bren
@@ -33,8 +35,9 @@ public class Chapter1 {
     }
 
     /**
-     *This method get number of digits in a given number
+     * This method get number of digits in a given number
      * by counting log10 from given number.
+     *
      * @param number value which input user.
      * @return integer value
      * @author Andrii Bren
@@ -45,6 +48,7 @@ public class Chapter1 {
 
     /**
      * This method get sum of digits in a given number.
+     *
      * @param number value which input user.
      * @return integer value sumOfDigits
      * @author Andrii Bren
@@ -61,6 +65,7 @@ public class Chapter1 {
     /**
      * This method check whether sum of divisors
      * equals to number.
+     *
      * @param number integer value.
      * @return boolean value.
      * @author Andrii Bren
@@ -82,6 +87,7 @@ public class Chapter1 {
     /**
      * This method get perfect numbers which
      * is less than given number.
+     *
      * @param number value which input user.
      * @return list of PerfectNumber with perfect numbers.
      * @author Andrii Bren
@@ -95,5 +101,4 @@ public class Chapter1 {
         }
         return perfectNumbers;
     }
-
 }
