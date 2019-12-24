@@ -1,10 +1,38 @@
-package com.lv465.chapters;
+package com.lv465.chapter;
+
+import com.lv465.util.PerfectNumber;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 public class Chapter1 {
-    private static int test;
+
+    /**
+     * Method for matching whether entered number contains number three
+     *
+     * @param num number read by Scanner
+     * @return boolean value of containing number
+     * @author Halina Yatseniuk
+     */
+    public boolean numberContainsThree(int num) {
+        return Stream.of(num)
+                .map(i -> i * i)
+                .map(Objects::toString)
+                .allMatch(m -> m.contains("3"));
+    }
+
+    /**
+     * Method for reversing entered number
+     *
+     * @param num number read by Scanner
+     * @return StringBuilder value of reversed string
+     * @author Halina Yatseniuk
+     */
+    public StringBuilder reverseNumber(int num) {
+        return new StringBuilder(((Integer) num).toString()).reverse();
+    }
 
     /**
      * This method convert given number to string
@@ -14,7 +42,7 @@ public class Chapter1 {
      * @return integer value length of string.
      * @author Andrii Bren
      */
-    int getNumberOfDigits1(Integer number) {
+    public int getNumberOfDigits1(Integer number) {
         return number.toString().length();
     }
 
@@ -25,7 +53,7 @@ public class Chapter1 {
      * @return integer value count
      * @author Andrii Bren
      */
-    int getNumberOfDigits2(int number) {
+    public int getNumberOfDigits2(int number) {
         int count = 0;
         while (number != 0) {
             count++;
@@ -42,7 +70,7 @@ public class Chapter1 {
      * @return integer value
      * @author Andrii Bren
      */
-    int getNumberOfDigits3(int number) {
+    public int getNumberOfDigits3(int number) {
         return (int) (Math.log10(number) + 1);
     }
 
@@ -53,7 +81,7 @@ public class Chapter1 {
      * @return integer value sumOfDigits
      * @author Andrii Bren
      */
-    int getSumOfDigits(int number) {
+    public int getSumOfDigits(int number) {
         int sumOfDigits = 0;
         while (number != 0) {
             sumOfDigits += number % 10;
