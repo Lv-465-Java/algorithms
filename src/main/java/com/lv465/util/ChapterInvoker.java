@@ -44,6 +44,9 @@ public class ChapterInvoker {
         menu.put("6", "  6 - number Of Digits3");
         menu.put("7", "  7 - sum Of Digits in number");
         menu.put("8", "  8 - perfect Numbers");
+        menu.put("9", "  9 - sum of last digits");
+        menu.put("10", "  10 - all common multiple for two numbers");
+        menu.put("11", "  11 - mertens numbers");
         menu.put("Q", "  Q - exit");
 
         methodsMenu = new LinkedHashMap<>();
@@ -55,6 +58,9 @@ public class ChapterInvoker {
         methodsMenu.put("6", this::numberOfDigits3);
         methodsMenu.put("7", this::getSumOfDigits);
         methodsMenu.put("8", this::getPerfectNumbers);
+        methodsMenu.put("9", this::logSumOfLastDigits);
+        methodsMenu.put("10", this::logAllCommonMultipleNumbers);
+        methodsMenu.put("11", this::logMertensNumbers);
     }
 
     /**
@@ -139,6 +145,41 @@ public class ChapterInvoker {
      */
     private void getPerfectNumbers() {
         LOG.info("Perfects numbers: " + chapter1.getPerfectNumbers(scanner.enterNumber()));
+    }
+
+    /**
+     * Method for logging sum of last number of digits of input number.
+     *
+     * @author Artur Sydor
+     */
+    private void logSumOfLastDigits() {
+        int number = scanner.enterNumber();
+        int numberOfDigits = scanner.enterNumber();
+        LOG.info("Sum of last " + numberOfDigits + " digits of number "
+                + number + " - " + chapter1.sumOfLastDigits(number, numberOfDigits));
+    }
+
+    /**
+     * Method for logging all common multiples for two number.
+     *
+     * @author Atrur Sydor
+     */
+    private void logAllCommonMultipleNumbers() {
+        int firstNumber = scanner.enterNumber();
+        int secondNumber = scanner.enterNumber();
+        LOG.info("List of all common multiple " + chapter2.findAllCommonMultipleNumbers(firstNumber, secondNumber)
+        + " for numbers:" + firstNumber + ", " + secondNumber);
+    }
+
+    /**
+     * Method for logging mertens numbers.
+     *
+     * @author Artur Sydor
+     */
+    private void logMertensNumbers() {
+        int number = scanner.enterNumber();
+        LOG.info("List of all mertens numbers " + chapter2.findMertensNumbers(number) +
+                 " smaller than " + number);
     }
 
     /**
