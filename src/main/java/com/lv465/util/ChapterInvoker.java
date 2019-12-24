@@ -142,6 +142,18 @@ public class ChapterInvoker {
     }
 
     /**
+     * Method for logging sum of last number of digits of input number.
+     *
+     * @author Artur Sydor
+     */
+    private void logSumOfLastDigits() {
+        int number = scanner.enterNumber();
+        int numberOfDigits = scanner.enterNumber();
+        LOG.info("Sum of last " + numberOfDigits + " digits of number "
+                + number + " - " + chapter1.sumOfLastDigits(number, numberOfDigits));
+    }
+
+    /**
      * Method for outputting the menu points
      *
      * @author Andrii Bren

@@ -140,7 +140,7 @@ public class Chapter1 {
      * @return sum of last m digits of n
      * @author Artur Sydor
      */
-    public Integer sumOfEndNumbers(int n, int m) {
+    public Integer sumOfLastDigits(int n, int m) {
         String number = new StringBuilder("" + n).reverse().toString();
         if (number.length() < m) {
             return -1;
