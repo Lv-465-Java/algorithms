@@ -138,7 +138,7 @@ public class Chapter1 {
      * @return long value - amount of numbers
      * @author Maria Shchur
      */
-    public long squareOfEvenNumber(int max_number){
+    public long getSquareOfEvenNumber(int max_number){
         return IntStream.
                 rangeClosed(1,max_number).
                 filter(q->(Math.sqrt(q)%2==0)).
@@ -153,7 +153,7 @@ public class Chapter1 {
      * @return long value - amount of numbers
      * @author Maria Shchur
      */
-    public long multipleOn3ButNot5(int max_number){
+    public long getMultipleOn3ButNot5(int max_number){
         return IntStream.
                 rangeClosed(1,max_number).
                 filter(q->(q%3==0 && q%5!=0)).

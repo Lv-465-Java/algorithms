@@ -55,7 +55,7 @@ public class Chapter2 {
      * @return  List<List<Integer>> - list of Pythagoras triples
      * @author Maria Shchur
      */
-    public List<List<Integer>> pythagoreanTriplets(int limit){
+    public List<List<Integer>> getPythagoreanTriplets(int limit){
         int m=2;
         int a,b,c;
         List<List<Integer>> resultlist = new ArrayList<>();
