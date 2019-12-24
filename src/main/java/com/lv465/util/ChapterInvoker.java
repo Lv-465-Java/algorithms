@@ -47,6 +47,9 @@ public class ChapterInvoker {
         menu.put("9", "  9 - sum of last digits");
         menu.put("10", "  10 - all common multiple for two numbers");
         menu.put("11", "  11 - mertens numbers");
+        menu.put("12","  12 - amount of squares of even numbers");
+        menu.put("13","  13 - amount of numbers multiple on 3, not 5");
+        menu.put("14","  14 - Pythagoras triples");
         menu.put("Q", "  Q - exit");
 
         methodsMenu = new LinkedHashMap<>();
@@ -61,6 +64,9 @@ public class ChapterInvoker {
         methodsMenu.put("9", this::logSumOfLastDigits);
         methodsMenu.put("10", this::logAllCommonMultipleNumbers);
         methodsMenu.put("11", this::logMertensNumbers);
+        methodsMenu.put("12", this::squareOfEvenNumber);
+        methodsMenu.put("13", this::multipleOn3ButNot5);
+        methodsMenu.put("14", this::PythagoreanTriplets);
     }
 
     /**
@@ -145,6 +151,38 @@ public class ChapterInvoker {
      */
     private void getPerfectNumbers() {
         LOG.info("Perfects numbers: " + chapter1.getPerfectNumbers(scanner.enterNumber()));
+    }
+    /**
+     * Method for logging amount of natural numbers
+     * that are square of even numbers
+     *
+     * @author Maria Shchur
+     */
+    private void squareOfEvenNumber(){
+        int number = scanner.enterNumber();
+        LOG.info("Amount of numbers from 1 to " + number +" that are square of even number = "
+                +chapter1.getSquareOfEvenNumber(number));
+    }
+
+    /**
+     * Method for logging amount of natural numbers
+     * multiple on 3 but not 5
+     *
+     * @author Maria Shchur
+     */
+    private void multipleOn3ButNot5(){
+        int number = scanner.enterNumber();
+        LOG.info("Amount of numbers from 1 to " + number +" that multiple on 3 but not 5 = "
+                +chapter1.getMultipleOn3ButNot5(number));
+    }
+
+    /**
+     * Method for logging all Pythagoras triples
+     *
+     * @author Maria Shchur
+     */
+    private void PythagoreanTriplets(){
+        LOG.info("Pythagorean triplets : " + chapter2.getPythagoreanTriplets(scanner.enterNumber()));
     }
 
     /**

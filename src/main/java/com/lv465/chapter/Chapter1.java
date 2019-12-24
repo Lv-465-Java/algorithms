@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Chapter1 {
@@ -151,5 +152,34 @@ public class Chapter1 {
                 .limit(m)
                 .sum();
         return sumOfEnd;
+    }
+    /**
+     * Method for returning amount of natural numbers
+     * that are square of even numbers
+     *
+     * @param max_number number is read by Scanner
+     * @return long value - amount of numbers
+     * @author Maria Shchur
+     */
+    public long getSquareOfEvenNumber(int max_number){
+        return IntStream.
+                rangeClosed(1,max_number).
+                filter(q->(Math.sqrt(q)%2==0)).
+                count();
+    }
+
+    /**
+     * This method return amount of natural numbers
+     * multiple on 3 but not 5
+     *
+     * @param max_number number is read by Scanner
+     * @return long value - amount of numbers
+     * @author Maria Shchur
+     */
+    public long getMultipleOn3ButNot5(int max_number){
+        return IntStream.
+                rangeClosed(1,max_number).
+                filter(q->(q%3==0 && q%5!=0)).
+                count();
     }
 }
