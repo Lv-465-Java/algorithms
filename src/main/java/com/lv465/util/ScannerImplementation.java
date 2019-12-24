@@ -1,4 +1,4 @@
-package algoritm.utils;
+package com.lv465.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,6 +56,12 @@ public class ScannerImplementation implements Scannable {
     @Override
     public String enterString() throws InputMismatchException {
         LOG.info("Please, enter string");
-        return scanner.nextLine();
+        return scanner.next();
+    }
+
+    @Override
+    public String enterMenuPoint() throws InputMismatchException {
+        LOG.info("Please, select menu point");
+        return scanner.next();
     }
 }
