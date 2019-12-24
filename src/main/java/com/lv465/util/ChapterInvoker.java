@@ -154,6 +154,18 @@ public class ChapterInvoker {
     }
 
     /**
+     * Method for logging all common multiples for two number.
+     *
+     * @author Atrur Sydor
+     */
+    private void logAllCommonMultipleNumbers() {
+        int firstNumber = scanner.enterNumber();
+        int secondNumber = scanner.enterNumber();
+        LOG.info("List of all common multiple " + chapter2.allCommonMultipleNumbers(firstNumber, secondNumber)
+        + " for numbers:" + firstNumber + ", " + secondNumber);
+    }
+
+    /**
      * Method for outputting the menu points
      *
      * @author Andrii Bren
