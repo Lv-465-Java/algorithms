@@ -83,19 +83,9 @@ public class Chapter1 {
      * This method get perfect numbers which
      * is less than given number.
      * @param number value which input user.
-     * @return list of integers with perfect numbers.
+     * @return list of PerfectNumber with perfect numbers.
      * @author Andrii Bren
      */
-//    List<Integer> getPerfectNumbers(int number) {
-//        List<Integer> perfectNumbers = new ArrayList<>();
-//        for (int i = 2; i < number; i++) {
-//            if (isPerfect(i)) {
-//                perfectNumbers.add(i);
-//            }
-//        }
-//        return perfectNumbers;
-//    }
-
     public List<PerfectNumber> getPerfectNumbers(int number) {
         List<PerfectNumber> perfectNumbers = new ArrayList<>();
         for (int i = 2; i < number; i++) {
