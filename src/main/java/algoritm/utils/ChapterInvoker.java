@@ -27,13 +27,13 @@ public class ChapterInvoker {
     private ScannerImplementation scannerImplementation = new ScannerImplementation();
 
     /**
-     * Method for logging whether entered number contains number three
+     * Method for logging whether entered number square contains number three
      *
      * @author Halina Yatseniuk
      */
-    public void checkIfNumberContainsThree() {
+    public void checkIfNumberSquareContainsThree() {
         try {
-            LOG.info("Number contains three - " + chapter1.numberContainsThree
+            LOG.info("Number contains three - " + chapter1.numberSquareContainsThree
                     (scannerImplementation.enterNumber()));
         } catch (InputMismatchException e) {
             LOG.info("Wrong input type");
@@ -48,7 +48,7 @@ public class ChapterInvoker {
     public void reverseEnteredNumber() {
         try {
             LOG.info("Reversed version of entered number - " + chapter1.reverseNumber
-                    (scannerImplementation.enterNumber()));
+                    (scannerImplementation.enterNaturalNumber()));
         } catch (InputMismatchException e) {
             LOG.info("Wrong input type");
         }
@@ -62,6 +62,6 @@ public class ChapterInvoker {
     public void numberWithTheBiggestSum() {
         Map.Entry<Integer, Integer> entry = chapter2.findNumberWithMaxSumOfDividers
                 (chapter2.generateIntStreamFromOneToTenThousand());
-        LOG.info("Number is " + entry.getKey() + " with a sum of all dividers - " + entry.getValue());
+        LOG.info("Number with the biggest sum is " + entry.getKey() + " with a sum of all dividers - " + entry.getValue());
     }
 }

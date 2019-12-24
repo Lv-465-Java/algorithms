@@ -14,6 +14,16 @@ public interface Scannable {
     int enterNumber() throws InputMismatchException;
 
     /**
+     * Method, that reads entered input number from console and
+     * checks whether it is natural
+     *
+     * @return int natural value
+     * @throws InputMismatchException
+     * @author Halina Yatseniuk
+     */
+    int enterNaturalNumber() throws InputMismatchException;
+
+    /**
      * Method, that reads entered input string from console
      *
      * @return string value

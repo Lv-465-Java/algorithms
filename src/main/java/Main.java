@@ -5,7 +5,7 @@ public class Main {
 
         ChapterInvoker chapterInvoker = new ChapterInvoker();
 
-        chapterInvoker.checkIfNumberContainsThree();
+        chapterInvoker.checkIfNumberSquareContainsThree();
         chapterInvoker.reverseEnteredNumber();
         chapterInvoker.numberWithTheBiggestSum();
     }
