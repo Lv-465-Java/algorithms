@@ -3,6 +3,7 @@ package com.lv465.chapter;
 import com.lv465.util.PerfectNumber;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.IntStream;
@@ -11,13 +12,13 @@ import java.util.stream.Stream;
 public class Chapter1 {
 
     /**
-     * Method for matching whether entered number contains number three
+     * Method for matching whether entered number square contains number three
      *
      * @param num number read by Scanner
-     * @return boolean value of containing number
+     * @return boolean value of containing number three
      * @author Halina Yatseniuk
      */
-    public boolean numberContainsThree(int num) {
+    public boolean numberSquareContainsThree(int num) {
         return Stream.of(num)
                 .map(i -> i * i)
                 .map(Objects::toString)
@@ -129,6 +130,28 @@ public class Chapter1 {
             }
         }
         return perfectNumbers;
+    }
+
+
+    /**
+     * Method calculates sum sum of last m digits of natural number n.
+     *
+     * @param n input number
+     * @param m number of last digits of n
+     * @return sum of last m digits of n
+     * @author Artur Sydor
+     */
+    public Integer sumOfLastDigits(int n, int m) {
+        String number = new StringBuilder("" + n).reverse().toString();
+        if (number.length() < m) {
+            return -1;
+        }
+        Integer sumOfEnd = Arrays.stream(number.split(""))
+                .filter(elem -> !elem.equals(""))
+                .mapToInt(Integer::parseInt)
+                .limit(m)
+                .sum();
+        return sumOfEnd;
     }
     /**
      * Method for returning amount of natural numbers
