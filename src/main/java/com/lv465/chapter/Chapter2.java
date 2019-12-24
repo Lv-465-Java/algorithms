@@ -58,7 +58,7 @@ public class Chapter2 {
      * @return list of all common multiple numbers smaller than n*m
      * @author Artur Sydor
      */
-    public List<Integer> allCommonMultipleNumbers(int n, int m) {
+    public List<Integer> findAllCommonMultipleNumbers(int n, int m) {
         if (n <= m) {
             return findMultiple(n, m);
         } else {

@@ -3,6 +3,7 @@ package com.lv465.util;
 
 import com.lv465.chapter.Chapter1;
 import com.lv465.chapter.Chapter2;
+import org.graalvm.compiler.lir.alloc.lsra.LinearScan_OptionDescriptors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -161,8 +162,19 @@ public class ChapterInvoker {
     private void logAllCommonMultipleNumbers() {
         int firstNumber = scanner.enterNumber();
         int secondNumber = scanner.enterNumber();
-        LOG.info("List of all common multiple " + chapter2.allCommonMultipleNumbers(firstNumber, secondNumber)
+        LOG.info("List of all common multiple " + chapter2.findAllCommonMultipleNumbers(firstNumber, secondNumber)
         + " for numbers:" + firstNumber + ", " + secondNumber);
+    }
+
+    /**
+     * Method for logging mertens numbers.
+     *
+     * @author Artur Sydor
+     */
+    private void logMertensNumbers() {
+        int number = scanner.enterNumber();
+        LOG.info("List of all mertens numbers " + chapter2.findMertensNumbers(number) +
+                 " smaller than " + number);
     }
 
     /**
