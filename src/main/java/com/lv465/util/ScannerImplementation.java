@@ -30,6 +30,23 @@ public class ScannerImplementation implements Scannable {
     }
 
     /**
+     * Method, that reads entered input number from console and
+     * checks whether it is natural
+     *
+     * @return int natural value
+     * @throws InputMismatchException
+     * @author Halina Yatseniuk
+     */
+    @Override
+    public int enterNaturalNumber() throws InputMismatchException {
+        LOG.info("Please, enter natural integer number");
+        if (scanner.nextInt() < 0) {
+            LOG.info("Wrong input number");
+        }
+        return scanner.nextInt();
+    }
+
+    /**
      * Method, that reads entered input string from console
      *
      * @return string value
@@ -44,7 +61,7 @@ public class ScannerImplementation implements Scannable {
 
     @Override
     public String enterMenuPoint() throws InputMismatchException {
-        LOG.info("Please, select menu point.");
+        LOG.info("Please, select menu point");
         return scanner.next();
     }
 }
