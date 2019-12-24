@@ -1,4 +1,4 @@
-package algoritm.chapters;
+package com.lv465.chapter;
 
 import java.util.HashMap;
 import java.util.Map;

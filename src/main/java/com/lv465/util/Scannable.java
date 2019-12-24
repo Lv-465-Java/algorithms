@@ -1,4 +1,4 @@
-package algoritm.utils;
+package com.lv465.util;
 
 import java.util.InputMismatchException;
 
@@ -21,4 +21,6 @@ public interface Scannable {
      * @author Halina Yatseniuk
      */
     String enterString() throws InputMismatchException;
+
+    String enterMenuPoint() throws InputMismatchException;
 }
