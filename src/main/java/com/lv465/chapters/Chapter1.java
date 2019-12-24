@@ -86,11 +86,21 @@ public class Chapter1 {
      * @return list of integers with perfect numbers.
      * @author Andrii Bren
      */
-    List<Integer> getPerfectNumbers(int number) {
-        List<Integer> perfectNumbers = new ArrayList<>();
+//    List<Integer> getPerfectNumbers(int number) {
+//        List<Integer> perfectNumbers = new ArrayList<>();
+//        for (int i = 2; i < number; i++) {
+//            if (isPerfect(i)) {
+//                perfectNumbers.add(i);
+//            }
+//        }
+//        return perfectNumbers;
+//    }
+
+    public List<PerfectNumber> getPerfectNumbers(int number) {
+        List<PerfectNumber> perfectNumbers = new ArrayList<>();
         for (int i = 2; i < number; i++) {
             if (isPerfect(i)) {
-                perfectNumbers.add(i);
+                perfectNumbers.add(new PerfectNumber(i));
             }
         }
         return perfectNumbers;
