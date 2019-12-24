@@ -36,7 +36,7 @@ public class ChapterInvoker {
         chapter1 = new Chapter1();
         chapter2 = new Chapter2();
         menu = new LinkedHashMap<>();
-        menu.put("1", "  1 - check if number contains three");
+        menu.put("1", "  1 - check if number square contains three");
         menu.put("2", "  2 - reverse Entered Number");
         menu.put("3", "  3 - number With The BiggestSum");
         menu.put("4", "  4 - number Of Digits1");
@@ -47,7 +47,7 @@ public class ChapterInvoker {
         menu.put("Q", "  Q - exit");
 
         methodsMenu = new LinkedHashMap<>();
-        methodsMenu.put("1", this::checkIfNumberContainsThree);
+        methodsMenu.put("1", this::checkIfNumberSquareContainsThree);
         methodsMenu.put("2", this::reverseEnteredNumber);
         methodsMenu.put("3", this::numberWithTheBiggestSum);
         methodsMenu.put("4", this::numberOfDigits1);
@@ -58,13 +58,13 @@ public class ChapterInvoker {
     }
 
     /**
-     * Method for logging whether entered number contains number three
+     * Method for logging whether entered number square contains number three
      *
      * @author Halina Yatseniuk
      */
-    private void checkIfNumberContainsThree() {
+    private void checkIfNumberSquareContainsThree() {
         try {
-            LOG.info("Number contains three - " + chapter1.numberContainsThree
+            LOG.info("Number square contains three - " + chapter1.numberSquareContainsThree
                     (scanner.enterNumber()));
         } catch (InputMismatchException e) {
             LOG.info("Wrong input type");
@@ -93,7 +93,7 @@ public class ChapterInvoker {
     private void numberWithTheBiggestSum() {
         Map.Entry<Integer, Integer> entry = chapter2.findNumberWithMaxSumOfDividers
                 (chapter2.generateIntStreamFromOneToTenThousand());
-        LOG.info("Number is " + entry.getKey() + " with a sum of all dividers - " + entry.getValue());
+        LOG.info("Number with the biggest sum is " + entry.getKey() + " with a sum of all dividers - " + entry.getValue());
     }
 
     /**

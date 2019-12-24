@@ -10,13 +10,13 @@ import java.util.stream.Stream;
 public class Chapter1 {
 
     /**
-     * Method for matching whether entered number contains number three
+     * Method for matching whether entered number square contains number three
      *
      * @param num number read by Scanner
-     * @return boolean value of containing number
+     * @return boolean value of containing number three
      * @author Halina Yatseniuk
      */
-    public boolean numberContainsThree(int num) {
+    public boolean numberSquareContainsThree(int num) {
         return Stream.of(num)
                 .map(i -> i * i)
                 .map(Objects::toString)
