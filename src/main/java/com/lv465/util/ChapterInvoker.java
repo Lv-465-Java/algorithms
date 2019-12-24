@@ -44,6 +44,9 @@ public class ChapterInvoker {
         menu.put("6", "  6 - number Of Digits3");
         menu.put("7", "  7 - sum Of Digits in number");
         menu.put("8", "  8 - perfect Numbers");
+        menu.put("12","  12 - amount of squares of even numbers");
+        menu.put("13","  13 - amount of numbers multiple on 3, not 5");
+        menu.put("14","  14 - Pythagoras triples");
         menu.put("Q", "  Q - exit");
 
         methodsMenu = new LinkedHashMap<>();
@@ -55,6 +58,9 @@ public class ChapterInvoker {
         methodsMenu.put("6", this::numberOfDigits3);
         methodsMenu.put("7", this::getSumOfDigits);
         methodsMenu.put("8", this::getPerfectNumbers);
+        methodsMenu.put("12", this::squareOfEvenNumber);
+        methodsMenu.put("13", this::multipleOn3ButNot5);
+        methodsMenu.put("14", this::PythagoreanTriplets);
     }
 
     /**
@@ -139,6 +145,38 @@ public class ChapterInvoker {
      */
     private void getPerfectNumbers() {
         LOG.info("Perfects numbers: " + chapter1.getPerfectNumbers(scanner.enterNumber()));
+    }
+    /**
+     * Method for logging amount of natural numbers
+     * that are square of even numbers
+     *
+     * @author Maria Shchur
+     */
+    private void squareOfEvenNumber(){
+        int number = scanner.enterNumber();
+        LOG.info("Amount of numbers from 1 to " + number +" that are square of even number = "
+                +chapter1.getSquareOfEvenNumber(number));
+    }
+
+    /**
+     * Method for logging amount of natural numbers
+     * multiple on 3 but not 5
+     *
+     * @author Maria Shchur
+     */
+    private void multipleOn3ButNot5(){
+        int number = scanner.enterNumber();
+        LOG.info("Amount of numbers from 1 to " + number +" that multiple on 3 but not 5 = "
+                +chapter1.getMultipleOn3ButNot5(number));
+    }
+
+    /**
+     * Method for logging all Pythagoras triples
+     *
+     * @author Maria Shchur
+     */
+    private void PythagoreanTriplets(){
+        LOG.info("Pythagorean triplets : " + chapter2.getPythagoreanTriplets(scanner.enterNumber()));
     }
 
     /**
