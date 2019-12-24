@@ -7,8 +7,7 @@ import java.util.*;
 import java.util.logging.Logger;
 
 public class Chapter1 {
-
-
+    
     private static Logger logger = Logger.getLogger(Chapter1.class.getName());
     private Scanner scanner = new Scanner(System.in);
     private Reader reader = new ReaderImpl(scanner);
@@ -16,19 +15,6 @@ public class Chapter1 {
     private List<List<Integer>> listList = new ArrayList<>();
     private boolean flag = false;
     private int number;
-
-    public Integer sumOfEndNumbers(int n, int m) {
-        String number = new StringBuilder("" + n).reverse().toString();
-        if (number.length() < m) {
-            return 0;
-        }
-        Integer sumOfEnd = Arrays.stream(number.split(""))
-                .filter(elem -> !elem.equals(""))
-                .mapToInt(Integer::parseInt)
-                .limit(m)
-                .sum();
-        return sumOfEnd;
-    }
 
     /**
      * The function finds the smallest number of 2^r which is greater than given number
@@ -125,5 +111,4 @@ public class Chapter1 {
         }
         return listList;
     }
-
 }
