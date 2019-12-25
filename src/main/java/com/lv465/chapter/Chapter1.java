@@ -1,5 +1,6 @@
 package com.lv465.chapter;
 
+import com.lv465.util.NaturalWrapper;
 import com.lv465.util.PerfectNumber;
 
 import java.util.ArrayList;
@@ -181,5 +182,86 @@ public class Chapter1 {
                 rangeClosed(1,max_number).
                 filter(q->(q%3==0 && q%5!=0)).
                 count();
+    }
+
+    /**
+     * The method finds the smallest number of 2^r which is greater than given number
+     * @param number >=1 which input user
+     * @return integer value
+     * @author Kravets Maryana
+     */
+
+    public int getSmallestNumberGreaterThanGivenNumber(int number) {
+        int i = 0;
+
+        while (number != 0 & number != 1) {
+            number /= 2;
+            i++;
+        }
+        double d = Math.pow(2, i + 1);
+        return (int) d;
+    }
+
+    /**
+     * The method verifies whether a given number can be represented as a sum of a square of three numbers
+     * @param  number>=1 which input user
+     * @return list of three numbers
+     * @author Kravets Maryana
+     */
+
+    public List<Integer> getThreeNaturalNumbers(int number) {
+        List<Integer> list=new ArrayList<>();
+        boolean flag = false;
+
+        for (int i = 1; i < number; i++) {
+            for (int j = 1; j <= number - i * i; j++) {
+                for (int k = 1; k <= number - i * i - j * j; k++) {
+                    if (number == i * i + j * j + k * k) {
+                        list.addAll(Arrays.asList(i, j, k));
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag) {
+                    break;
+                }
+            }
+            if (flag) {
+                break;
+            }
+        }
+//        if (!flag) {
+//            logger.info("This natural number can't be represented " +
+//                    "as a sum of squares of three number!");
+//        }
+        return list;
+    }
+
+    /**
+     * The method finds all pairs of three numbers whose sum of squares equals to a given number
+     *   @param  number>=1 which input user
+     *   @return list of all objects of three numbers
+     *   @author Kravets Maryana
+     */
+
+    public List<NaturalWrapper> getAllPairOfThreeNumber(int number) {
+        List<NaturalWrapper> list =new ArrayList<>();
+        boolean flag = false;
+
+        for (int i = 1; i < number; i++) {
+            for (int j = 1; j <= number - i * i; j++) {
+                for (int k = 1; k <= number - i * i - j * j; k++) {
+                    if (number == i * i + j * j + k * k) {
+                        list.add(new NaturalWrapper(number,i,j,k));
+                        flag = true;
+                    }
+                }
+            }
+        }
+//        if (!flag) {
+//            logger.info("This natural number can't be represented " +
+//                    "as a sum of squares of three number!");
+//        }
+        return list;
     }
 }

@@ -50,6 +50,9 @@ public class ChapterInvoker {
         menu.put("12","  12 - amount of squares of even numbers");
         menu.put("13","  13 - amount of numbers multiple on 3, not 5");
         menu.put("14","  14 - Pythagoras triples");
+        menu.put("15","  15 - get smallest number of 2^r which greater than given number");
+        menu.put("16","  16 - get three numbers whose sum of a squares equals to given number, if it is possible");
+        menu.put("17","  17 - all pairs of three numbers whose sum of squares equals to a given number, if it is possible");
         menu.put("Q", "  Q - exit");
 
         methodsMenu = new LinkedHashMap<>();
@@ -67,6 +70,9 @@ public class ChapterInvoker {
         methodsMenu.put("12", this::squareOfEvenNumber);
         methodsMenu.put("13", this::multipleOn3ButNot5);
         methodsMenu.put("14", this::PythagoreanTriplets);
+        methodsMenu.put("15", this::getSmallestNumber);
+        methodsMenu.put("16", this::getThreeNumbers);
+        methodsMenu.put("17", this::getAllObjectsOfThreeNumbers);
     }
 
     /**
@@ -218,6 +224,47 @@ public class ChapterInvoker {
         int number = scanner.enterNumber();
         LOG.info("List of all mertens numbers " + chapter2.findMertensNumbers(number) +
                  " smaller than " + number);
+    }
+
+    /**
+     * Method for logging the smallest number of 2^r which is greater than given number
+     *
+     * @author Maryana Kravets
+     */
+    private void getSmallestNumber() {
+        int number=scanner.enterNaturalNumber();
+        LOG.info("The smallest number of 2^r which greater than "+ number+" is: " +
+                chapter1.getSmallestNumberGreaterThanGivenNumber(number));
+    }
+
+    /**
+     * Method for logging three numbers whose sum of squares equals to a given number.
+     *
+     * @author Maryana Kravets
+     */
+    private void getThreeNumbers(){
+        int number = scanner.enterNaturalNumber();
+        if(chapter1.getThreeNaturalNumbers(number).size()==0){
+            LOG.info("This natural number can't be represented as a sum of squares of three number!");
+        } else {
+        LOG.info("Three number whose sum of squares equals to a given number "+ 
+                + number + " are:  " + chapter1.getThreeNaturalNumbers(number));
+        }
+    }
+
+    /**
+     * Method for logging all pair of three numbers whose sum of squares equals to a given number.
+     *
+     * @author Maryana Kravets
+     */
+    private void getAllObjectsOfThreeNumbers() {
+        int number = scanner.enterNaturalNumber();
+        if(chapter1.getThreeNaturalNumbers(number).size()==0){
+            LOG.info("This natural number can't be represented as a sum of squares of three number!");
+        } else {
+            LOG.info("All pair of three numbers whose sum of squares equals to a given number are: "
+                    + chapter1.getAllPairOfThreeNumber(number));
+        }
     }
 
     /**
