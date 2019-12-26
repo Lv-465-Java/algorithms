@@ -53,6 +53,9 @@ public class ChapterInvoker {
         menu.put("15","  15 - get smallest number of 2^r which greater than given number");
         menu.put("16","  16 - get three numbers whose sum of a squares equals to given number, if it is possible");
         menu.put("17","  17 - all pairs of three numbers whose sum of squares equals to a given number, if it is possible");
+        menu.put("18", "18 - get maximum number in which 4^k < n");
+        menu.put("19", "19 - get all pairs of two numbers x, y in which n = x^2 + y^2, if it is possible");
+        menu.put("20", "20 - get all pairs of two numbers x, y in which n = x^2 + y^2 and x >= y, if it is possible");
         menu.put("Q", "  Q - exit");
 
         methodsMenu = new LinkedHashMap<>();
@@ -73,6 +76,9 @@ public class ChapterInvoker {
         methodsMenu.put("15", this::getSmallestNumber);
         methodsMenu.put("16", this::getThreeNumbers);
         methodsMenu.put("17", this::getAllObjectsOfThreeNumbers);
+        methodsMenu.put("18", this::getMaximumNumber);
+        methodsMenu.put("19", this::getAllPairsNaturalNumbers1);
+        methodsMenu.put("20", this::getAllPairsNaturalNumbers2);
     }
 
     /**
@@ -264,6 +270,45 @@ public class ChapterInvoker {
         } else {
             LOG.info("All pair of three numbers whose sum of squares equals to a given number are: "
                     + chapter1.getAllPairOfThreeNumber(number));
+        }
+    }
+    /**
+     * Method for logging the maximum integer k  in which 4^k < n.
+     *
+     * @author Marian Dutchyn
+     */
+    private void getMaximumNumber(){
+        int number = scanner.enterNaturalNumber();
+        LOG.info("The maximum number in which 4^k < n is " + chapter1.getMaximumNumber(number));
+    }
+
+    /**
+     * Method for logging all pair of two numbers x, y in which n = x^2 + y^2.
+     *
+     * @author Marian Dutchyn
+     */
+    private void getAllPairsNaturalNumbers1(){
+        int number = scanner.enterNaturalNumber();
+        if (chapter2.getAllPairsNaturalNumbers1(number).size() <= 0){
+            LOG.info("This natural number can't be represented as a sum of squares of two numbers!");
+        } else {
+            LOG.info("All pair of two numbers whose sum of squares equals to a given number are:"
+            + chapter2.getAllPairsNaturalNumbers1(number));
+        }
+    }
+
+    /**
+     * Method for logging all pair of two numbers x, y in which n = x^2 + y^2 and x >= y
+     *
+     * @author Marian Dutchyn
+     */
+    private void getAllPairsNaturalNumbers2(){
+        int number = scanner.enterNaturalNumber();
+        if (chapter2.getAllPairsNaturalNumbers2(number).size() <= 0){
+            LOG.info("This natural number can't be represented as a sum of squares of two numbers!");
+        } else {
+            LOG.info("All pair of two numbers whose sum of squares equals to a given number are:"
+                    + chapter2.getAllPairsNaturalNumbers2(number));
         }
     }
 

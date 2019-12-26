@@ -41,7 +41,7 @@ public class ScannerImplementation implements Scannable {
     public int enterNaturalNumber() throws InputMismatchException {
         LOG.info("Please, enter natural integer number");
         int number=scanner.nextInt();
-        if (number < 0) {
+        if (number < 1) {
             LOG.info("Wrong input number");
         }
         return number;
