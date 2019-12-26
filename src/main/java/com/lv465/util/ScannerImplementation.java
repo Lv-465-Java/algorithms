@@ -40,10 +40,11 @@ public class ScannerImplementation implements Scannable {
     @Override
     public int enterNaturalNumber() throws InputMismatchException {
         LOG.info("Please, enter natural integer number");
-        if (scanner.nextInt() < 0) {
+        int number=scanner.nextInt();
+        if (number < 0) {
             LOG.info("Wrong input number");
         }
-        return scanner.nextInt();
+        return number;
     }
 
     /**
