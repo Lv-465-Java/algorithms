@@ -278,4 +278,36 @@ public class Chapter1 {
         }
         return k;
     }
+
+    /**
+     * This method add one before and after number
+     * @author Ivan Syniuk
+     * @param number from user
+     * @return integer value with nubmer 1 before and after value
+     */
+    public Integer addOneBeforeAndAfterNumber(int number) {
+        String s1 = "1" + number + "1";
+        int value = Integer.parseInt(s1);
+        return value;
+    }
+
+    /**
+     *This method replace first and last number of value
+     * @author Ivan Syniuk
+     * @param number from user
+     * @return replaced integer value
+     */
+    public Integer replaceFristAndLastNumber(int number) {
+        String s = number + "";
+        char first = s.charAt(0);
+        char last = s.charAt(s.length() - 1);
+        String newString = "";
+        char[] arr = s.toCharArray();
+        for (int i = 1; i < s.length() - 1; i++) {
+            newString += arr[i];
+        }
+        String goodString = last + newString + first;
+        int value = Integer.parseInt(goodString);
+        return value;
+    }
 }

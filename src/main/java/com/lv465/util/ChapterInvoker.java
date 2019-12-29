@@ -56,6 +56,9 @@ public class ChapterInvoker {
         menu.put("18", "18 - get maximum number in which 4^k < n");
         menu.put("19", "19 - get all pairs of two numbers x, y in which n = x^2 + y^2, if it is possible");
         menu.put("20", "20 - get all pairs of two numbers x, y in which n = x^2 + y^2 and x >= y, if it is possible");
+        menu.put("21"," 21 - replace first and last number");
+        menu.put("22"," 22 - Add number One before and after value");
+        menu.put("23"," 23 - get value with max sum of divisors");
         menu.put("Q", "  Q - exit");
 
         methodsMenu = new LinkedHashMap<>();
@@ -79,6 +82,9 @@ public class ChapterInvoker {
         methodsMenu.put("18", this::getMaximumNumber);
         methodsMenu.put("19", this::getAllPairsNaturalNumbers1);
         methodsMenu.put("20", this::getAllPairsNaturalNumbers2);
+        methodsMenu.put("21", this::replaceFirstAndLastNumber);
+        methodsMenu.put("22", this::addOneBeforAndAfterValue);
+        methodsMenu.put("23", this::getValueWithMaxSumDivisors);
     }
 
     /**
@@ -310,6 +316,35 @@ public class ChapterInvoker {
             LOG.info("All pair of two numbers whose sum of squares equals to a given number are:"
                     + chapter2.getAllPairsNaturalNumbers2(number));
         }
+    }
+
+    /**
+     * Method for logging value with replaced first and last number
+     *
+     * @author Ivan Syniuk
+     */
+    private void replaceFirstAndLastNumber(){
+        int number = scanner.enterNaturalNumber();
+        LOG.info("Replaced value is :" + chapter1.replaceFristAndLastNumber(number) );
+    }
+
+    /**
+     * Method for logging value with added number one before and after value
+     *
+     * @author Ivan Syniuk
+     */
+    private void addOneBeforAndAfterValue(){
+        int number = scanner.enterNaturalNumber();
+        LOG.info("Value with number One before and after value : " + chapter1.addOneBeforeAndAfterNumber(number));
+    }
+
+    /**
+     * Method for logging value with max sum of divisors
+     *
+     * @author Ivan Syniuk
+     */
+    private void getValueWithMaxSumDivisors(){
+        LOG.info("Value with max sum of divisors : " + chapter2.getValueWithMaxSumOfDivisors());
     }
 
     /**

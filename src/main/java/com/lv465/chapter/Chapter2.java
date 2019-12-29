@@ -212,4 +212,27 @@ public class Chapter2 {
         }
         return result;
     }
+
+    /**
+     * This method returns the value with the max sum of divisors
+     * @author Ivan Syniuk
+     * @return integer value
+     */
+    public int getValueWithMaxSumOfDivisors() {
+        int sum = 0;
+        int maxValue = 0;
+        for (int i = 1; i < 10000; i++) {
+            int currentSum = 0;
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    currentSum += j;
+                }
+            }
+            if (currentSum > sum) {
+                sum = currentSum;
+                maxValue = i;
+            }
+        }
+        return maxValue;
+    }
 }
